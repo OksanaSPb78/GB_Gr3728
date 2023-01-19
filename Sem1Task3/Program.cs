@@ -45,11 +45,11 @@
 // Считаваем данные с консоли 
 string? inputLine = Console.ReadLine();
 // Проверяем, чтобы данные не были пустыми
-int inputNumber = int.Parse(Console.ReadLine()??"0");
+int inputNumber = int.Parse(Console.ReadLine() ?? "0");
 
 
 string outDayOfWeek = System.Globalization.CultureInfo.GetCultureInfo("ru-RU").DateTimeFormat.GetDayName((DayOfWeek)Enum.GetValues(typeof(DayOfWeek)).GetValue(inputNumber));
-                //foreach(inputNumber in (DayOfWeek[]) Enum.GetValues(typeof(DayOfWeek )))
+//foreach(inputNumber in (DayOfWeek[]) Enum.GetValues(typeof(DayOfWeek )))
 Console.WriteLine(outDayOfWeek);
-                                        //    CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(_d.DayOfWeek);
-                                        //    CultureInfo.GetCultureInfo("ru-RU").DateTimeFormat.GetDayName(_d.DayOfWeek);
+//    CultureInfo.CurrentCulture.DateTimeFormat.GetDayName(_d.DayOfWeek);
+//    CultureInfo.GetCultureInfo("ru-RU").DateTimeFormat.GetDayName(_d.DayOfWeek);
