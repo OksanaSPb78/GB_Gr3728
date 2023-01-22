@@ -5,36 +5,47 @@
 // 78 -> третьей цифры нет
 // 32679 -> 6
 
-// ВАРИАНТ 1
-// Ввод массива символов
-char[] digit = Console.ReadLine().ToCharArray();
-// Проверяем длину массива
-if (digit.Length >= 3)
+// // ВАРИАНТ 1
+// // Ввод массива символов
+// char[] digit = (Console.ReadLine()??"0").ToCharArray();
+// // Проверяем длину массива
+// if (digit.Length >= 3)
+// {
+//     // Ввывод цифры 3 из массива
+//     Console.WriteLine(digit[2]);
+// }
+// else
+// {
+//     // Ввывод цифры 3 из массива
+//     Console.WriteLine("Третьей цифры нет");
+// }
+// ВАРИАНТ 2 НЕ ЗАКОНЧЕН
+// Просим пользователя ввести число
+Console.WriteLine("Введите трёхзначное число");
+
+// Ввод числа
+int num = int.Parse(Console.ReadLine() ?? "0");
+// Запускаем цикл, если введённое число трёхзначное
+if (num > 99)
 {
-    // Ввывод цифры 3 из массива
-    Console.WriteLine(digit[2]);
+    // Находим количество цифр в числе
+    int length = (int)Math.Log10(num) + 1;
+    int index = 0;
+    int thirdDigit = num;
+    // Делаем деление числа на 10 (length-3)раз,
+    // пока число является трёхзначным
+    while (index < length - 3)
+    {
+        thirdDigit = thirdDigit / 10;
+        index++;
+    }
+    // Находим третью цифру остатком от деления 
+    thirdDigit = thirdDigit % 10;
+    // Выводим третье число 
+    Console.WriteLine(thirdDigit);
 }
 else
 {
-    // Ввывод цифры 3 из массива
-    Console.WriteLine("Третьей цифры нет");
+
+    Console.WriteLine("Число не является трёхзначным, нет третьей цифры");
 }
-// // ВАРИАНТ 2 НЕ ЗАКОНЧЕН
-// // Просим пользователя ввести число
-// Console.WriteLine("Введите число");
-
-// // Ввод числа
-// int num = int.Parse(Console.ReadLine() ?? "0");
-// if (num > 100 && num < 1000)
-// {
-//     Console.WriteLine("Число является трёхзначным");
-
-//           else
-//     {
-//         Console.WriteLine("Число не является трёхзначным");
-//     }
-
-
-
-
-// }

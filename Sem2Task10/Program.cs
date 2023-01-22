@@ -32,7 +32,7 @@
 Console.WriteLine("Введите трёхзначное число");
 
 // Ввод массива символов
-char[] digit = Console.ReadLine().ToCharArray();
+char[] digit = (Console.ReadLine()??"0").ToCharArray();
 
 // Проверяем длину массива
 if (digit.Length == 3)
