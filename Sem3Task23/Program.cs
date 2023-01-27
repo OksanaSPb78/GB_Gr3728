@@ -8,6 +8,7 @@ Console.Write("Введите N: ");
 int num = int.Parse(Console.ReadLine() ?? "0");
 // получим число N
 string LineBuilder(int n, int p)
+
 {
     string res = "";
     for (int i = 1; i < n; i++)
