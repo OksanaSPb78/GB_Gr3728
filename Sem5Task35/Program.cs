@@ -2,11 +2,11 @@
 // Задайте одномерный массив из 123 случайных чисел. Найдите количество элементов массива,
 // значения которых лежат в отрезке [10,99].
 
-int ReadData(string msg)
-{
-    Console.WriteLine(msg);
-    return int.Parse(Console.ReadLine() ?? "0");
-}
+// int ReadData(string msg)
+// {
+//     Console.WriteLine(msg);
+//     return int.Parse(Console.ReadLine() ?? "0");
+// }
 
 void PrintData(string res)
 {
