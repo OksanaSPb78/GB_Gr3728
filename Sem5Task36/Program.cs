@@ -22,6 +22,7 @@ int[] Gen1DArray(int len, int minValue, int maxValue)
 
 //  метод печати массива с квадратными скобками вначале и конце([]) 
 // и зяпятой (,) между числами
+
 void Print1DArr(int[] arr)
 {
     Console.Write("[");
