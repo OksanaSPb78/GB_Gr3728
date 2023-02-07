@@ -62,5 +62,3 @@ int DiagSum(int[,] arr)
     return res;
 }
 
-
-Console.WriteLine(sumOfDiagonal);

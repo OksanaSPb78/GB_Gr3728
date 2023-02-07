@@ -18,6 +18,7 @@ int ylen = InputNum("Ваше число строк:");
 int[,] matrix = CreateArray(xlen, ylen);
 //3) Печатаем двумерный массив
 ShowArray(matrix);
+
 // метод получения данных от пользователя
 int InputNum(string msg)
 {

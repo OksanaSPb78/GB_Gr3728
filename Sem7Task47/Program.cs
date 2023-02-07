@@ -1,5 +1,11 @@
-﻿// Задача №46
-// Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+﻿// Задача 47. Задайте двумерный массив размером m×n, заполненный 
+// случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+// * При выводе матрицы показывать каждую цифру разного цвета(цветов всего 16)
+
 
 ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,ConsoleColor.Cyan,
                                         ConsoleColor.DarkBlue,ConsoleColor.DarkCyan,ConsoleColor.DarkGray,
@@ -9,34 +15,36 @@ ConsoleColor[] col = new ConsoleColor[]{ConsoleColor.Black,ConsoleColor.Blue,Con
                                         ConsoleColor.Yellow};
 
 //1) Получение данных от пользователя
-int n = InputNum("Количество строк матрицы  ");
-int m = InputNum("Количество строк матрицы  ");
+int n = ReadData("Количество строк матрицы  ");
+int m = ReadData("Количество строк матрицы  ");
 
 //2) Генерация двумерного массива
-int[,] matix = FillTwoDimArray(n,m);
+double[,] matix =Gen2DArr(n,m);
 
 //3) Печатаем двумерный массив
-PrintTwoDimArray(matix);
+Print2DArr(matix);
 
-// метод получения данных от пользователя
-int InputNum(string msg)
+// Метод читает данные от пользователя
+int ReadData(string msg)
 {
-    Console.Write(msg);
+    Console.WriteLine(msg);
+    // Вводим переменную с проверкой на null
     return int.Parse(Console.ReadLine() ?? "0");
 }
 
-// метод для заполнения двумерного массива случайными числами
-int[,] FillTwoDimArray(int countRow, int countColumn)
+// метод заполнения двумерного массива случайными числами
+double[,] Gen2DArr(int countRow, int countColumn)
 {
     System.Random numberSyntezator = new System.Random();
     int i = 0; int j = 0;
-    int[,] outArray = new int[countRow, countColumn];
+    double[,] outArray = new double[countRow, countColumn];
     while (i < countRow)
     {
         j = 0;
         while (j < countColumn)
         {
-            outArray[i, j] = numberSyntezator.Next(0, 101);
+            outArray[i, j] = new Random().Next(countRow,countColumn)+ numberSyntezator.NextDouble();
+            
             j++;
         }
         i++;
@@ -45,7 +53,7 @@ int[,] FillTwoDimArray(int countRow, int countColumn)
 }
 
 //метод для печати двумерного массива
-void PrintTwoDimArray(int[,] inputArray)
+void Print2DArr(double[,] inputArray)
 {
     int i = 0; int j = 0;
 
@@ -54,8 +62,8 @@ void PrintTwoDimArray(int[,] inputArray)
         j = 0;
         while (j < inputArray.GetLength(1))
         {
-            Console.ForegroundColor = (ConsoleColor)(new System.Random().Next(0,16));
-            // col[new System.Random().Next(0,16)]; 
+            Console.ForegroundColor = (ConsoleColor)(new System.Random().Next(0,4));
+            
             Console.Write(inputArray[i, j] + " ");
             Console.ResetColor(); 
             j++;
